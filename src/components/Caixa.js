@@ -18,6 +18,7 @@ const Caixa = (props) => {
     
     Dica1: Considere usar a função "reduce" do Javascript. Aliás, o nome reducer
     usado no Redux é inspirado nesta função. Veja alguns exemplos da função reduce:
+    
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
     Dica2: Você pode descobrir o nome da chave a ser utilizada aqui mesmo, neste arquivo.
