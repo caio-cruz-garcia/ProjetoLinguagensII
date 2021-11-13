@@ -13,7 +13,7 @@ const CashbackForm = (props) => {
         e.preventDefault()
         //faça o dispatch de uma ação de pedido de cartão aqui
         //this.props.selecionarPessoa(pessoa)
-        e.props.pedirCartao(cpf,nome,cartaoEscolhido)
+        props.pedirCartao(cpf,nome,cartaoEscolhido)
     }
     return (
         <Card>

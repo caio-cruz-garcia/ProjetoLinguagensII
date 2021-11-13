@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card } from 'primereact/card'
 import { connect } from 'react-redux'
-import { combineReducers } from 'redux'
 
 const Caixa = (props) => {
     return (
@@ -29,11 +28,15 @@ const Caixa = (props) => {
 
 
 const mapStateToProps = (state) => {
-    const totalCartao = state.pedidosCartaoReducer.reduce(combineReducers.pedidosCartaoReducer.pedidosCartao[0])
-    const totalCashBack = state.pedidosCashbackReducer.reduce()
+    const totalCartao = state.pedidosCartao.reduce(function(valorAnteriror,ValorCorrespondente){
+        return valorAnteriror + +ValorCorrespondente.valor
+    },0)
+    const totalCashBack = state.pedidosCashback.reduce(function(valorAnteriror,ValorCorrespondente){
+        return valorAnteriror + +ValorCorrespondente.valor
+    },0)
     return (
         {
-           Caixa: totalCartao - totalCashBack
+           caixa: totalCartao - totalCashBack
         }
     )
 }

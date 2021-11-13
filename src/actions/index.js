@@ -20,9 +20,9 @@ export const pedirCartao = (cpf, nome, cartaoEscolhido) => {
         payload: {
             'cpf': cpf,
             'nome': nome,
-            'tipoTrasacao': "PEDIR_CARTAO",
-            'date': new Date(),
-            'valor': cartaoEscolhido.valor
+            'tipoTransacao': "PEDIR_CARTAO",
+            'data': new Date().toLocaleDateString(),
+            'valor': (cartaoEscolhido === "gold" ? 50 : 100)
         }
     }
 }
@@ -44,7 +44,7 @@ export const pedirCashback = (cpf, valor) => {
             'cpf': cpf,
             'valor': valor,
             'tipoTransacao': "PEDIR_CASHBACK",
-            'data': new Date()
+            'data': new Date().toLocaleDateString()
         }
     }
 }

@@ -32,6 +32,6 @@ const pedidosCashbackReducer = (pedidosCashback = [], acao) => {
 */
 
 export default combineReducers({
-    pedidosCartaoReducer,
-    pedidosCashbackReducer
+    pedidosCartao: pedidosCartaoReducer,
+    pedidosCashback: pedidosCashbackReducer
 })
