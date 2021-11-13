@@ -2,6 +2,8 @@ import React, { useState }from 'react'
 import { Card } from 'primereact/card'
 import { Button } from 'primereact/button'
 import { connect } from 'react-redux'
+import { pedirCashback } from '../actions'
+import { combineReducers } from 'redux'
 //faça o import da criadora de ação apropriada para esse componente aqui
 
 const CashbackForm = (props) => {
@@ -11,7 +13,7 @@ const CashbackForm = (props) => {
     const enviar = (e) => {
         e.preventDefault()
         //faça o dispatch de uma ação de pedido de cashback aqui
-
+        props.pedirCashback(cpf,valor)
     }
     return (
         <Card>

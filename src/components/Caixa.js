@@ -1,6 +1,8 @@
 import React from 'react'
 import { Card } from 'primereact/card'
 import { connect } from 'react-redux'
+import { combineReducers } from 'redux'
+
 const Caixa = (props) => {
     return (
         <Card
@@ -23,9 +25,17 @@ const Caixa = (props) => {
 
     Dica2: Você pode descobrir o nome da chave a ser utilizada aqui mesmo, neste arquivo.
 */
-const mapStateToProps = (state) => (
-    {
-        //seu código aqui
-    }
-)
+
+
+
+const mapStateToProps = (state) => {
+    const totalCartao = state.pedidosCartaoReducer.reduce(combineReducers.pedidosCartaoReducer.pedidosCartao[0])
+    const totalCashBack = state.pedidosCashbackReducer.reduce()
+    return (
+        {
+           Caixa: totalCartao - totalCashBack
+        }
+    )
+}
+
 export default connect(mapStateToProps)(Caixa)
